@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pixlprf
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: pixlprf
+  template:
+    metadata:
+      labels:
+        app: pixlprf
+    spec:
+      containers:
+      - name: pixlprf
+        image: us.icr.io/pxlnew/npxlprf
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000

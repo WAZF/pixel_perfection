@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <a href="{{ url_for('index') }}" ><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="logo" width="50px" style="border-radius: 20%;"></a>
+            </div>
+          
+            <ul> 
+              <li><a href="{{ url_for('login') }}">Login</a></li>
+              <li><a href="{{ url_for('register') }}">Register</a></li>
+              <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            </ul>
+        </div>
+     </nav>
+    <div class="container">
+        <div class="form">
+    <h1>Register</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    {% if msg %}
+        <p>{{ msg }}</p>
+    {% endif %}
+    <form method="POST" action="/register">
+        <div class="form-group">
+        <input type="text" class="form-group" name="username" placeholder="Username"><br>
+        <input type="password" class="form-group" name="password" placeholder="Password"><br>
+        <input type="password" class="form-group" name="confirm_password" placeholder="Confirm Password"><br>
+        <input type="submit" value="register">
+    </div>
+    </form></div></div>
+</body>
+</html>

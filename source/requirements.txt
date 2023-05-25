@@ -1,0 +1,5 @@
+ibm_db
+flask
+requests
+Pillow
+bcrypt

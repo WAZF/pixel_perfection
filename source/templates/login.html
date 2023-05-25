@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    
+  <nav>
+    <div class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('index') }}" ><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="logo" width="50px" style="border-radius: 20%;"></a>
+        </div>
+      
+        <ul> 
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+          <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        </ul>
+    </div>
+ </nav>
+<div class="container">
+  <div class="form">
+    <h1>Login</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    {% if msg %}
+        <p>{{ msg }}</p>
+    {% endif %}
+    <form method="POST" action="/login">
+      <div class="form-group">
+        <input type="text" name="username" class="form-group" placeholder="Username"><br><br>
+        <input type="password" name="password" class="form-group" placeholder="Password"><br><br>
+        <input type="submit" value="login">
+      </div>
+    </form>
+  </div>
+</div>
+    <p>Don't have an account?<a href="{{url_for('register')}}">register</a></p>
+</body>
+</html>

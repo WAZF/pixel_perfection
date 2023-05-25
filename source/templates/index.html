@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel Perfection</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+ <nav>
+    <div class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('index') }}" ><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="logo" width="50px" style="border-radius: 20%;"></a>
+        </div>
+      
+        <ul> 
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+          <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        </ul>
+    </div>
+ </nav>
+    <h1>Pixel Perfection</h1>
+    <h2>Upload an image to increase its resolution</h2>
+    <form action="/increase_resolution" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <br>
+        <label for="increase_factor">Resolution Increase Factor:</label>
+        <input type="number" name="increase_factor" min="1" max="10" value="2">
+        <br>
+        <input type="submit" value="Increase Resolution">
+    </form>
+</body>
+</html>

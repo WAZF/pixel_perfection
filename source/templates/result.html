@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <a href="{{ url_for('index') }}" ><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="logo" width="50px" style="border-radius: 20%;"></a>
+            </div>
+          
+            <ul> 
+              <li><a href="{{ url_for('login') }}">Login</a></li>
+              <li><a href="{{ url_for('register') }}">Register</a></li>
+              <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            </ul>
+        </div>
+     </nav>
+    <h1>Result</h1>
+    <div>
+        <div class="orgimg">
+            <h3>Original Image</h3>
+            <img src="{{ url_for('static', filename='original.jpg') }}" alt="Original Image">
+        </div>
+        <div class="newimg">
+            <h3>New Image ({{ increase_factor }}x resolution increase)</h3>
+            <img src="{{ url_for('static', filename='new.jpg') }}" alt="New Image">
+        </div>
+    </div>
+</body>
+</html>
